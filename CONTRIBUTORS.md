@@ -18,7 +18,8 @@ Each member should add and maintain only their own section.
 - **PRs I reviewed:** No reviews by this account to report.
 - **PRs I merged:** [#2 Add: CommunityHub app shell components](https://github.com/Quantums-meruit/iyf-s12-communityhub-team-Quantums-meruit/pull/2)
 - **Issues I closed:** No issues closed yet.
-- **Additional work completed with Copilot assistance:** Checked the repository's PR and review history and documented the verified two-member contributions in this file. Prepared a revert of PR #2 on the `revert-pr-2-app-shell` branch and ran the frontend build and lint checks successfully. The revert PR has not yet been opened or merged.
+- **Work completed:** Set up the Vite React scaffold; built the CommunityHub app shell, including the header, sidebar, and footer; and added shared UI and member profile components.
+- **Additional Week 8 work:** Prepared a revert of PR #2 on the `revert-pr-2-app-shell` branch. Frontend build and lint checks passed. The revert PR has not yet been opened or merged.
 
 ### @WairimuEvans
 
