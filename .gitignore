@@ -89,7 +89,7 @@ dist
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js
-# https://nextjs.org/blog/next-9-1#public-directory-support
+# https://nextjs.org/blog/next-9-1#gatsby
 # public
 
 # vuepress build output
@@ -113,7 +113,7 @@ dist
 # Serverless directories
 .serverless/
 
-# FuseBox cache
+# FuseBox cache directory
 .fusebox/
 
 # DynamoDB Local files
@@ -125,7 +125,7 @@ dist
 # TernJS port file
 .tern-port
 
-# Stores Visual Studio Code versions used for testing Visual Studio Code extensions
+# Stores Visual Studio Code versions used for testing VS Code extensions
 .vscode-test
 
 # pnpm
@@ -148,10 +148,15 @@ vite.config.ts.timestamp-*
 # Astro generated types
 .astro/
 
-# Turbo Repo (https://turborepo.dev/)
+# Turbo Repo (https://turbo.build/repo)
 .turbo
 
-# Nx (https://nx.dev/)
+# Nx
 .nx/cache
 .nx/workspace-data
 .nx/migrate-runs
+
+# Local editor and operating-system files
+.vscode/
+.DS_Store
+Thumbs.db
