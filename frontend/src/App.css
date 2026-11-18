@@ -1,0 +1,385 @@
+.app {
+  width: min(100% - 2rem, 78rem);
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  min-height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-bottom: 1px solid #e2e7f0;
+}
+
+/* Shared controls use the same spacing, borders, and focus treatment. */
+.ui-button {
+  min-height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid transparent;
+  border-radius: 0.55rem;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.ui-button:focus-visible,
+.ui-input__control:focus-visible {
+  outline: 3px solid #aaa7f0;
+  outline-offset: 2px;
+}
+
+.ui-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.ui-button--primary {
+  color: #fff;
+  background: #5550c7;
+}
+
+.ui-button--secondary {
+  color: #4843b4;
+  border-color: #d8d6f7;
+  background: #f5f4ff;
+}
+
+.ui-button--ghost {
+  color: #526078;
+  border-color: #e2e7f0;
+  background: #fff;
+}
+
+.ui-input {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.ui-input__label {
+  color: #354158;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.ui-input__control {
+  width: 100%;
+  min-height: 2.65rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #cfd6e3;
+  border-radius: 0.55rem;
+  color: #172033;
+  background: #fff;
+  font: inherit;
+}
+
+.ui-input__control::placeholder {
+  color: #8791a3;
+}
+
+.ui-card {
+  padding: 1.25rem;
+  border: 1px solid #e2e7f0;
+  border-radius: 0.85rem;
+  background: #fff;
+}
+
+/* Member cards share avatar sizing while keeping compact and full views distinct. */
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+}
+
+.user-card__avatar,
+.user-profile__avatar {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-card__avatar--fallback,
+.user-profile__avatar--fallback {
+  display: grid;
+  place-items: center;
+  color: #4843b4;
+  background: #eeedff;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.user-card__identity {
+  min-width: 0;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.user-card__name,
+.user-card__username {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-card__name {
+  color: #354158;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.user-card__username,
+.user-profile__username {
+  color: #7a8497;
+  font-size: 0.8rem;
+}
+
+.user-profile {
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.user-profile__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-profile__avatar {
+  width: 4rem;
+  height: 4rem;
+}
+
+.user-profile__identity {
+  flex: 1;
+}
+
+.user-profile__identity .eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+.user-profile__identity h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.user-profile__username {
+  margin: 0.2rem 0 0;
+}
+
+.user-profile__bio {
+  margin: 1rem 0 0;
+  color: #647087;
+  line-height: 1.6;
+}
+
+.site-brand,
+.header-nav,
+.sidebar-link,
+.site-footer {
+  display: flex;
+  align-items: center;
+}
+
+.site-brand {
+  gap: 0.65rem;
+  color: #172033;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.site-brand-mark {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.65rem;
+  color: #fff;
+  background: #5b55d6;
+}
+
+.header-nav {
+  gap: 1.5rem;
+}
+
+.header-nav a,
+.text-link {
+  color: #5555b8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header-nav a {
+  color: #526078;
+  font-size: 0.9rem;
+}
+
+.header-nav a:hover,
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.app-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: 2.5rem;
+  padding: 2rem 0;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar-section h2 {
+  margin: 0 0 0.75rem;
+  color: #7a8497;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.sidebar-link {
+  min-height: 2.5rem;
+  gap: 0.7rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 0.55rem;
+  color: #47546b;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.sidebar-link:hover,
+.sidebar-link.is-active {
+  color: #4843b4;
+  background: #eeedff;
+}
+
+.sidebar-link.is-active {
+  font-weight: 650;
+}
+
+.sidebar-empty {
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  color: #7a8497;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.sidebar-note {
+  margin-top: auto;
+  padding: 0.85rem;
+  border-radius: 0.7rem;
+  color: #59667d;
+  background: #edf2fb;
+  font-size: 0.82rem;
+}
+
+.main-content {
+  display: grid;
+  align-content: start;
+  gap: 1.25rem;
+}
+
+.welcome-card,
+.feed-placeholder {
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  border: 1px solid #e2e7f0;
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.welcome-card {
+  background: linear-gradient(120deg, #f1efff, #f8f8ff 60%, #eef6ff);
+}
+
+.eyebrow {
+  margin: 0 0 0.7rem;
+  color: #6460bd;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.welcome-card h1 {
+  max-width: 35rem;
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.welcome-card > p:last-child,
+.feed-placeholder p:not(.eyebrow) {
+  max-width: 38rem;
+  color: #647087;
+  line-height: 1.65;
+}
+
+.feed-placeholder {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.feed-placeholder h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.site-footer {
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid #e2e7f0;
+  color: #7a8497;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 700px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .sidebar-note {
+    display: none;
+  }
+
+  .header-nav {
+    gap: 0.8rem;
+  }
+
+  .header-nav a {
+    font-size: 0.8rem;
+  }
+
+  .feed-placeholder {
+    align-items: start;
+    flex-direction: column;
+  }
+}
