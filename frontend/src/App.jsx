@@ -54,7 +54,7 @@ function App() {
   }
 
   return (
-    <div className="app">
+    <section className="app" aria-label="CommunityHub application">
       <Header />
 
       <section className="app-layout" aria-label="Community feed layout">
@@ -84,7 +84,7 @@ function App() {
       </section>
 
       <Footer />
-    </div>
+    </section>
   )
 }
 
