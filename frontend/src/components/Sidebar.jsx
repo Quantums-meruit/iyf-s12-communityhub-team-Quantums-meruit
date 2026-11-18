@@ -1,5 +1,7 @@
+import UserCard from './UserCard.jsx'
+
 // Collects the feed and community links beside the main content.
-function Sidebar() {
+function Sidebar({ user }) {
   return (
     <aside className="sidebar" aria-label="Community navigation">
       <section className="sidebar-section">
@@ -19,6 +21,7 @@ function Sidebar() {
         <h2>Your communities</h2>
         <p className="sidebar-empty">Your joined communities will appear here.</p>
       </section>
+      {user && <UserCard user={user} />}
       <p className="sidebar-note">Find your people. Share what matters.</p>
     </aside>
   )

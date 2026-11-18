@@ -91,6 +91,96 @@
   background: #fff;
 }
 
+/* Member cards share avatar sizing while keeping compact and full views distinct. */
+.user-card {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+}
+
+.user-card__avatar,
+.user-profile__avatar {
+  width: 2.75rem;
+  height: 2.75rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-card__avatar--fallback,
+.user-profile__avatar--fallback {
+  display: grid;
+  place-items: center;
+  color: #4843b4;
+  background: #eeedff;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.user-card__identity {
+  min-width: 0;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.user-card__name,
+.user-card__username {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.user-card__name {
+  color: #354158;
+  font-size: 0.88rem;
+  font-weight: 650;
+}
+
+.user-card__username,
+.user-profile__username {
+  color: #7a8497;
+  font-size: 0.8rem;
+}
+
+.user-profile {
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+.user-profile__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-profile__avatar {
+  width: 4rem;
+  height: 4rem;
+}
+
+.user-profile__identity {
+  flex: 1;
+}
+
+.user-profile__identity .eyebrow {
+  margin-bottom: 0.35rem;
+}
+
+.user-profile__identity h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.user-profile__username {
+  margin: 0.2rem 0 0;
+}
+
+.user-profile__bio {
+  margin: 1rem 0 0;
+  color: #647087;
+  line-height: 1.6;
+}
+
 .site-brand,
 .header-nav,
 .sidebar-link,
