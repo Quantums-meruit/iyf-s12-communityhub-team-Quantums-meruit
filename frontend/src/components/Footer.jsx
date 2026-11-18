@@ -1,4 +1,3 @@
-// Gives every screen the same small footer and project note.
 function Footer() {
   return (
     <footer className="site-footer" id="about">
