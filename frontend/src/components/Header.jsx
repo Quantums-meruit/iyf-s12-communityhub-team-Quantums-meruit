@@ -1,3 +1,4 @@
+// Keeps the main navigation consistent across CommunityHub screens.
 function Header() {
   return (
     <header className="site-header">

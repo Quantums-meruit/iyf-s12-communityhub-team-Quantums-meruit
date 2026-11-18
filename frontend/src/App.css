@@ -15,6 +15,82 @@
   border-bottom: 1px solid #e2e7f0;
 }
 
+/* Shared controls use the same spacing, borders, and focus treatment. */
+.ui-button {
+  min-height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid transparent;
+  border-radius: 0.55rem;
+  font: inherit;
+  font-size: 0.9rem;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.ui-button:focus-visible,
+.ui-input__control:focus-visible {
+  outline: 3px solid #aaa7f0;
+  outline-offset: 2px;
+}
+
+.ui-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.ui-button--primary {
+  color: #fff;
+  background: #5550c7;
+}
+
+.ui-button--secondary {
+  color: #4843b4;
+  border-color: #d8d6f7;
+  background: #f5f4ff;
+}
+
+.ui-button--ghost {
+  color: #526078;
+  border-color: #e2e7f0;
+  background: #fff;
+}
+
+.ui-input {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.ui-input__label {
+  color: #354158;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.ui-input__control {
+  width: 100%;
+  min-height: 2.65rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #cfd6e3;
+  border-radius: 0.55rem;
+  color: #172033;
+  background: #fff;
+  font: inherit;
+}
+
+.ui-input__control::placeholder {
+  color: #8791a3;
+}
+
+.ui-card {
+  padding: 1.25rem;
+  border: 1px solid #e2e7f0;
+  border-radius: 0.85rem;
+  background: #fff;
+}
+
 .site-brand,
 .header-nav,
 .sidebar-link,

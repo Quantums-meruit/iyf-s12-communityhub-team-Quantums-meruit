@@ -1,3 +1,4 @@
+// Collects the feed and community links beside the main content.
 function Sidebar() {
   return (
     <aside className="sidebar" aria-label="Community navigation">
