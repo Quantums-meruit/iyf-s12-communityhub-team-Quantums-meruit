@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <div className="app-layout">
+      <section className="app-layout" aria-label="Community feed layout">
         <Sidebar />
         <main className="main-content" id="feed">
           <section className="welcome-card" id="home">
@@ -30,7 +30,7 @@ function App() {
             <a className="text-link" href="#communities">Explore communities</a>
           </section>
         </main>
-      </div>
+      </section>
       <Footer />
     </div>
   )

@@ -109,23 +109,12 @@
   font-weight: 650;
 }
 
-.community-dot {
-  width: 0.65rem;
-  height: 0.65rem;
-  flex: 0 0 auto;
-  border-radius: 50%;
-}
-
-.dot-violet {
-  background: #8c69d8;
-}
-
-.dot-blue {
-  background: #4b8acb;
-}
-
-.dot-green {
-  background: #48a77a;
+.sidebar-empty {
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  color: #7a8497;
+  font-size: 0.84rem;
+  line-height: 1.5;
 }
 
 .sidebar-note {

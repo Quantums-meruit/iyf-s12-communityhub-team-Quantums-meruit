@@ -16,20 +16,7 @@ function Sidebar() {
       </section>
       <section className="sidebar-section" id="communities">
         <h2>Your communities</h2>
-        <nav className="sidebar-nav" aria-label="Your communities">
-          <a className="sidebar-link" href="#design">
-            <span className="community-dot dot-violet" aria-hidden="true" />
-            <span>Design Circle</span>
-          </a>
-          <a className="sidebar-link" href="#technology">
-            <span className="community-dot dot-blue" aria-hidden="true" />
-            <span>Tech Connect</span>
-          </a>
-          <a className="sidebar-link" href="#garden">
-            <span className="community-dot dot-green" aria-hidden="true" />
-            <span>Gardeners' Corner</span>
-          </a>
-        </nav>
+        <p className="sidebar-empty">Your joined communities will appear here.</p>
       </section>
       <p className="sidebar-note">Find your people. Share what matters.</p>
     </aside>
