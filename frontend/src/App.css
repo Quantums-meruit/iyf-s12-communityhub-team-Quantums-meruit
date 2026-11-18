@@ -1,10 +1,230 @@
 .app {
-  width: min(100% - 2rem, 72rem);
+  width: min(100% - 2rem, 78rem);
   margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-header {
+  min-height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  border-bottom: 1px solid #e2e7f0;
+}
+
+.site-brand,
+.header-nav,
+.sidebar-link,
+.site-footer {
+  display: flex;
+  align-items: center;
+}
+
+.site-brand {
+  gap: 0.65rem;
+  color: #172033;
+  font-weight: 750;
+  text-decoration: none;
+}
+
+.site-brand-mark {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 0.65rem;
+  color: #fff;
+  background: #5b55d6;
+}
+
+.header-nav {
+  gap: 1.5rem;
+}
+
+.header-nav a,
+.text-link {
+  color: #5555b8;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header-nav a {
+  color: #526078;
+  font-size: 0.9rem;
+}
+
+.header-nav a:hover,
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.app-layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 15rem minmax(0, 1fr);
+  gap: 2.5rem;
   padding: 2rem 0;
 }
 
-.app h1 {
-  margin: 0;
-  font-size: clamp(2rem, 5vw, 3rem);
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sidebar-section h2 {
+  margin: 0 0 0.75rem;
+  color: #7a8497;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.sidebar-nav {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.sidebar-link {
+  min-height: 2.5rem;
+  gap: 0.7rem;
+  padding: 0.5rem 0.65rem;
+  border-radius: 0.55rem;
+  color: #47546b;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.sidebar-link:hover,
+.sidebar-link.is-active {
+  color: #4843b4;
+  background: #eeedff;
+}
+
+.sidebar-link.is-active {
+  font-weight: 650;
+}
+
+.community-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+}
+
+.dot-violet {
+  background: #8c69d8;
+}
+
+.dot-blue {
+  background: #4b8acb;
+}
+
+.dot-green {
+  background: #48a77a;
+}
+
+.sidebar-note {
+  margin-top: auto;
+  padding: 0.85rem;
+  border-radius: 0.7rem;
+  color: #59667d;
+  background: #edf2fb;
+  font-size: 0.82rem;
+}
+
+.main-content {
+  display: grid;
+  align-content: start;
+  gap: 1.25rem;
+}
+
+.welcome-card,
+.feed-placeholder {
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  border: 1px solid #e2e7f0;
+  border-radius: 1rem;
+  background: #fff;
+}
+
+.welcome-card {
+  background: linear-gradient(120deg, #f1efff, #f8f8ff 60%, #eef6ff);
+}
+
+.eyebrow {
+  margin: 0 0 0.7rem;
+  color: #6460bd;
+  font-size: 0.7rem;
+  font-weight: 750;
+  letter-spacing: 0.1em;
+}
+
+.welcome-card h1 {
+  max-width: 35rem;
+  margin: 0 0 0.75rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.04em;
+  line-height: 1.1;
+}
+
+.welcome-card > p:last-child,
+.feed-placeholder p:not(.eyebrow) {
+  max-width: 38rem;
+  color: #647087;
+  line-height: 1.65;
+}
+
+.feed-placeholder {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.feed-placeholder h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+}
+
+.site-footer {
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid #e2e7f0;
+  color: #7a8497;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 700px) {
+  .app-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  .sidebar-note {
+    display: none;
+  }
+
+  .header-nav {
+    gap: 0.8rem;
+  }
+
+  .header-nav a {
+    font-size: 0.8rem;
+  }
+
+  .feed-placeholder {
+    align-items: start;
+    flex-direction: column;
+  }
 }
