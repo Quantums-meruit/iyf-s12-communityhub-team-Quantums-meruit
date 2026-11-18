@@ -17,6 +17,7 @@ CommunityHub is a React-based community platform built by the IYF Season 12 team
 - JavaScript (ES modules)
 - Vite
 - Oxlint
+- Vitest
 
 ## Project structure
 
@@ -71,8 +72,8 @@ Run these commands from the `frontend/` directory:
 | `npm run build` | Create a production build |
 | `npm run preview` | Preview the production build |
 | `npm run lint` | Check the frontend source with Oxlint |
-
-The current frontend package does not define an automated test script.
+| `npm test` | Run the automated test suite once |
+| `npm run test:watch` | Run tests in watch mode |
 
 ## Team workflow
 
