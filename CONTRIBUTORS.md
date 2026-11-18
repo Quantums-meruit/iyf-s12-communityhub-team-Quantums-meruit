@@ -18,6 +18,7 @@ Each member should add and maintain only their own section.
 - **PRs I reviewed:** No reviews by this account to report.
 - **PRs I merged:** [#2 Add: CommunityHub app shell components](https://github.com/Quantums-meruit/iyf-s12-communityhub-team-Quantums-meruit/pull/2)
 - **Issues I closed:** No issues closed yet.
+- **Other Week 8 work:** Prepared a revert of PR #2 on the `revert-pr-2-app-shell` branch and updated this contributor log. The revert PR has not yet been opened or merged.
 
 ### @WairimuEvans
 
