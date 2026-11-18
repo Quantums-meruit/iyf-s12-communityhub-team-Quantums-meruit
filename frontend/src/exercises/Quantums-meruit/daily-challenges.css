@@ -1,0 +1,142 @@
+.daily-greeting {
+  padding: 1rem;
+  border-left: 4px solid #5550c7;
+  background: #f5f4ff;
+}
+
+.daily-card {
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+}
+
+.daily-card--primary {
+  color: #fff;
+  background: #5550c7;
+}
+
+.daily-card--secondary {
+  border: 1px solid #d9def0;
+  background: #f0f3fa;
+}
+
+.daily-card--outlined {
+  border: 2px solid #5550c7;
+  background: #fff;
+}
+
+.daily-user-list {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.daily-user-card {
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.75rem;
+  border: 1px solid #e2e7f0;
+  border-radius: 0.55rem;
+}
+
+.daily-user-card span,
+.daily-empty {
+  color: #7a8497;
+}
+
+.daily-button {
+  min-height: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.55rem;
+  font: inherit;
+  cursor: pointer;
+}
+
+.daily-button--small {
+  min-height: 2rem;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.78rem;
+}
+
+.daily-button--medium {
+  padding: 0.55rem 0.85rem;
+  font-size: 0.88rem;
+}
+
+.daily-button--large {
+  min-height: 3rem;
+  padding: 0.7rem 1.1rem;
+  font-size: 1rem;
+}
+
+.daily-button--primary {
+  color: #fff;
+  background: #5550c7;
+}
+
+.daily-button--secondary {
+  color: #4843b4;
+  border-color: #d8d6f7;
+  background: #f5f4ff;
+}
+
+.daily-button--danger {
+  color: #fff;
+  background: #bd3d48;
+}
+
+.daily-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.daily-spinner {
+  width: 0.85rem;
+  height: 0.85rem;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: daily-spin 0.7s linear infinite;
+}
+
+@keyframes daily-spin {
+  to { transform: rotate(360deg); }
+}
+
+.daily-page-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.daily-page-layout__body {
+  flex: 1;
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem 0;
+}
+
+.daily-page-layout__body--with-sidebar {
+  grid-template-columns: minmax(12rem, 16rem) minmax(0, 1fr);
+}
+
+.daily-page-layout__sidebar {
+  padding: 1rem;
+  border: 1px solid #e2e7f0;
+  border-radius: 0.75rem;
+}
+
+.daily-page-layout__main {
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .daily-page-layout__body--with-sidebar {
+    grid-template-columns: 1fr;
+  }
+}
