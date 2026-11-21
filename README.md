@@ -89,13 +89,17 @@ Run these commands from the `frontend/` directory:
 - Request review from another team member.
 - Merge only after the required review and checks have passed.
 
-## Accessibility audit
+## Lighthouse audit
 
-The Week 9 task requires Lighthouse Accessibility scores to be recorded before and after accessibility improvements. The actual audit values have not yet been captured, so no scores are claimed here. Run Lighthouse against the same application build and record the measured Accessibility scores below.
+Lighthouse audits were run in Chrome using the same Navigation mode and Desktop device settings on the original `main` version and the completed Week 9 feature branch.
 
-| Audit | Lighthouse Accessibility score |
-| --- | --- |
-| Before improvements | Pending measurement |
-| After improvements | Pending measurement |
+| Category | Before (main) | After (Week 9) | Change |
+| --- | ---: | ---: | ---: |
+| Performance | 29 | 32 | +3 |
+| Accessibility | 95 | 95 | No change |
+| Best Practices | 100 | 100 | No change |
+| SEO | 82 | 82 | No change |
+
+The Week 9 version retained the original Accessibility, Best Practices, and SEO scores, while Performance increased by 3 points. Lighthouse scores can vary between runs and environments.
 
 See [CONTRIBUTORS.md](CONTRIBUTORS.md) for the team contribution areas.
