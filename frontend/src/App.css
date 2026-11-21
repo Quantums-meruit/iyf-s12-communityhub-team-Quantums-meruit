@@ -227,6 +227,37 @@
   text-decoration: underline;
 }
 
+/* Keep routed page content inside the available grid column. */
+.main-content-wrapper {
+  min-width: 0;
+}
+
+.page-content {
+  display: grid;
+  align-content: start;
+  gap: 1.25rem;
+}
+
+.page-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.page-heading h1 {
+  margin: 0;
+  color: #172033;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  letter-spacing: -0.03em;
+}
+
+.page-heading p {
+  margin: 0.4rem 0 0;
+  color: #647087;
+  line-height: 1.5;
+}
+
 .app-layout {
   flex: 1;
   display: grid;
@@ -525,7 +556,7 @@
 .post-search {
   display: grid;
   gap: 0.5rem;
-  margin: 1.5rem 0;
+  margin: 0;
   max-width: 40rem;
 }
 
