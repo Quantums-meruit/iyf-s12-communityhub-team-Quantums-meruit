@@ -1,0 +1,52 @@
+.page {
+  display: grid;
+  align-content: start;
+  gap: 1.25rem;
+  min-width: 0;
+}
+
+.intro {
+  max-width: 44rem;
+}
+
+.intro h1 {
+  margin: 0;
+  color: #172033;
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  letter-spacing: -0.035em;
+}
+
+.intro > p:last-child {
+  max-width: 40rem;
+  margin: 0.55rem 0 0;
+  color: #647087;
+  line-height: 1.65;
+}
+
+.editor {
+  min-width: 0;
+}
+
+.guidance {
+  margin: 0;
+  color: #647087;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+.backLink {
+  width: fit-content;
+  color: #5555b8;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.backLink:hover {
+  text-decoration: underline;
+}
+
+.backLink:focus-visible {
+  outline: 3px solid #aaa7f0;
+  outline-offset: 3px;
+  border-radius: 0.2rem;
+}
