@@ -1,90 +1,45 @@
-import { useState } from 'react'
-import Footer from './components/Footer.jsx'
-import Header from './components/Header.jsx'
-import Sidebar from './components/Sidebar.jsx'
-import UserProfile from './components/UserProfile.jsx'
-import CreatePost from './components/CreatePost.jsx'
-import PostList from './components/PostList.jsx'
-import { createPost, deletePost, toggleLike } from './utils/posts.js'
-import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { PostsProvider } from './context/PostsContext.jsx'
+import AppLayout from './components/AppLayout.jsx'
+import HomePage from './pages/HomePage.jsx'
+import PostsPage from './pages/PostsPage.jsx'
+import PostDetailPage from './pages/PostDetailPage.jsx'
+import NotFoundPage from './pages/NotFoundPage.jsx'
 
-const communityMember = {
-  name: 'Joseph Kinyanjui',
-  username: 'Quantums-meruit',
-  bio: 'CommunityHub team lead.',
+function CreatePostPlaceholder() {
+  return (
+    <main className="main-content">
+      <h1>Create a post</h1>
+      <p>This page is being implemented by the team.</p>
+    </main>
+  )
 }
 
-const currentUser = {
-  id: 'WairimuEvans',
-  name: 'Evans Wairimu',
+function AboutPlaceholder() {
+  return (
+    <main className="main-content">
+      <h1>About CommunityHub</h1>
+      <p>Learn more about our community.</p>
+    </main>
+  )
 }
 
 function App() {
-  const [posts, setPosts] = useState([])
-
-  function handleCreatePost(content) {
-    const newPost = createPost({
-      content,
-      author: currentUser,
-    })
-
-    if (newPost) {
-      setPosts((currentPosts) => [newPost, ...currentPosts])
-    }
-  }
-
-  function handleToggleLike(postId) {
-    setPosts((currentPosts) =>
-      toggleLike(currentPosts, postId, currentUser.id),
-    )
-  }
-
-  function handleDeletePost(postId) {
-    setPosts((currentPosts) => {
-      const selectedPost = currentPosts.find(
-        (post) => post.id === postId,
-      )
-
-      if (selectedPost?.author.id !== currentUser.id) {
-        return currentPosts
-      }
-
-      return deletePost(currentPosts, postId)
-    })
-  }
-
   return (
-    <section className="app" aria-label="CommunityHub application">
-      <Header />
-
-      <section className="app-layout" aria-label="Community feed layout">
-        <Sidebar user={communityMember} />
-
-        <main className="main-content" id="feed">
-          <section className="welcome-card" id="home">
-            <p className="eyebrow">YOUR SPACE, YOUR PEOPLE</p>
-            <h1>Welcome to your community.</h1>
-            <p>
-              A place to connect, share ideas, and keep up with the groups
-              you care about.
-            </p>
-          </section>
-
-          <UserProfile user={communityMember} />
-
-          <CreatePost onCreatePost={handleCreatePost} />
-
-          <PostList
-            posts={posts}
-            currentUserId={currentUser.id}
-            onToggleLike={handleToggleLike}
-            onDeletePost={handleDeletePost}
-          />
-        </main>
-      </section>
-
-      <Footer />
-    </section>
+    <BrowserRouter>
+      <PostsProvider>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/posts" element={<PostsPage />} />
+            <Route path="/posts/:postId" element={<PostDetailPage />} />
+            <Route path="/create" element={<CreatePostPlaceholder />} />
+            <Route path="/about" element={<AboutPlaceholder />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </PostsProvider>
+    </BrowserRouter>
   )
 }
 

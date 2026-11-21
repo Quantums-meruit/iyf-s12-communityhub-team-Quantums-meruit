@@ -1,13 +1,16 @@
+import { Link } from 'react-router-dom'
 import Button from './Button.jsx'
 
 function PostCard({ post, currentUserId, onToggleLike, onDeletePost }) {
   const isLiked = post.likes.includes(currentUserId)
   const isAuthor = post.author.id === currentUserId
 
-  const formattedDate = new Intl.DateTimeFormat('en-KE', {
-    dateStyle: 'medium',
-    timeStyle: 'short',
-  }).format(new Date(post.createdAt))
+  const formattedDate = post.createdAt
+    ? new Intl.DateTimeFormat('en-KE', {
+        dateStyle: 'medium',
+        timeStyle: 'short',
+      }).format(new Date(post.createdAt))
+    : null
 
   return (
     <article className="post-card" aria-labelledby={`post-${post.id}`}>
@@ -17,8 +20,12 @@ function PostCard({ post, currentUserId, onToggleLike, onDeletePost }) {
           <p>@{post.author.id}</p>
         </section>
 
-        <time dateTime={post.createdAt}>{formattedDate}</time>
+        {formattedDate && (
+          <time dateTime={post.createdAt}>{formattedDate}</time>
+        )}
       </header>
+
+      {post.title && <h4>{post.title}</h4>}
 
       <p className="post-card__content">{post.content}</p>
 
@@ -31,6 +38,8 @@ function PostCard({ post, currentUserId, onToggleLike, onDeletePost }) {
         >
           {isLiked ? '♥ Liked' : '♡ Like'} · {post.likes.length}
         </Button>
+
+        <Link to={`/posts/${post.id}`}>Read post</Link>
 
         {isAuthor && (
           <Button

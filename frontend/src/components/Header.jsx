@@ -1,15 +1,18 @@
-// Keeps the main navigation consistent across CommunityHub screens.
+import { Link, NavLink } from 'react-router-dom'
+
 function Header() {
   return (
     <header className="site-header">
-      <a className="site-brand" href="#home" aria-label="CommunityHub home">
+      <Link className="site-brand" to="/" aria-label="CommunityHub home">
         <span className="site-brand-mark" aria-hidden="true">C</span>
         <span>CommunityHub</span>
-      </a>
+      </Link>
+
       <nav className="header-nav" aria-label="Main navigation">
-        <a href="#feed">Feed</a>
-        <a href="#communities">Communities</a>
-        <a href="#about">About</a>
+        <NavLink to="/" end>Home</NavLink>
+        <NavLink to="/posts">Posts</NavLink>
+        <NavLink to="/create">Create post</NavLink>
+        <NavLink to="/about">About</NavLink>
       </nav>
     </header>
   )
