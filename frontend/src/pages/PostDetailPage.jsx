@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom'
-import { usePosts } from '../context/PostsContext.jsx'
+import { usePosts } from '../context/usePosts.js'
 
 function PostDetailPage() {
   const { postId } = useParams()
