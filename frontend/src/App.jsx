@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { PostsProvider } from './context/PostsContext.jsx'
 import AppLayout from './components/AppLayout.jsx'
 import HomePage from './pages/HomePage.jsx'
 import PostsPage from './pages/PostsPage.jsx'
@@ -26,16 +27,18 @@ function AboutPlaceholder() {
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route element={<AppLayout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/posts" element={<PostsPage />} />
-          <Route path="/posts/:postId" element={<PostDetailPage />} />
-          <Route path="/create" element={<CreatePostPlaceholder />} />
-          <Route path="/about" element={<AboutPlaceholder />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
+      <PostsProvider>
+        <Routes>
+          <Route element={<AppLayout />}>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/posts" element={<PostsPage />} />
+            <Route path="/posts/:postId" element={<PostDetailPage />} />
+            <Route path="/create" element={<CreatePostPlaceholder />} />
+            <Route path="/about" element={<AboutPlaceholder />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </PostsProvider>
     </BrowserRouter>
   )
 }

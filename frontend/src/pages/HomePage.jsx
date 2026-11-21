@@ -1,47 +1,19 @@
-import { useState } from 'react'
 import UserProfile from '../components/UserProfile.jsx'
 import CreatePost from '../components/CreatePost.jsx'
 import PostList from '../components/PostList.jsx'
-import { createPost, deletePost, toggleLike } from '../utils/posts.js'
-
-const currentUser = {
-  id: 'WairimuEvans',
-  name: 'Evans Wairimu',
-}
+import { usePosts } from '../context/PostsContext.jsx'
 
 function HomePage() {
-  const [posts, setPosts] = useState([])
-
-  function handleCreatePost(content) {
-    const newPost = createPost({
-      content,
-      author: currentUser,
-    })
-
-    if (newPost) {
-      setPosts((currentPosts) => [newPost, ...currentPosts])
-    }
-  }
-
-  function handleToggleLike(postId) {
-    setPosts((currentPosts) =>
-      toggleLike(currentPosts, postId, currentUser.id),
-    )
-  }
-
-  function handleDeletePost(postId) {
-    setPosts((currentPosts) => {
-      const selectedPost = currentPosts.find(
-        (post) => post.id === postId,
-      )
-
-      if (selectedPost?.author.id !== currentUser.id) {
-        return currentPosts
-      }
-
-      return deletePost(currentPosts, postId)
-    })
-  }
+  const {
+    posts,
+    loading,
+    error,
+    refetch,
+    addPost,
+    likePost,
+    removePost,
+    currentUser,
+  } = usePosts()
 
   return (
     <main className="main-content" id="feed">
@@ -62,14 +34,25 @@ function HomePage() {
         }}
       />
 
-      <CreatePost onCreatePost={handleCreatePost} />
+      <CreatePost onCreatePost={addPost} />
 
-      <PostList
-        posts={posts}
-        currentUserId={currentUser.id}
-        onToggleLike={handleToggleLike}
-        onDeletePost={handleDeletePost}
-      />
+      {loading && <p role="status">Loading community posts...</p>}
+
+      {error && (
+        <section aria-label="Post loading error">
+          <p role="alert">Could not load community posts: {error}</p>
+          <button type="button" onClick={refetch}>Try again</button>
+        </section>
+      )}
+
+      {!loading && !error && (
+        <PostList
+          posts={posts}
+          currentUserId={currentUser.id}
+          onToggleLike={likePost}
+          onDeletePost={removePost}
+        />
+      )}
     </main>
   )
 }
