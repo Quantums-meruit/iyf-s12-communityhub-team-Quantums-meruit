@@ -4,10 +4,18 @@ This project is developed collaboratively by the IYF Season 12 CommunityHub team
 
 | GitHub username | Contribution area |
 | --- | --- |
-| [Quantums-meruit](https://github.com/Quantums-meruit) | Team lead; application shell and shared interface components, including the header, footer, sidebar, user profile/card, and reusable UI components. |
+| [Quantums-meruit](https://github.com/Quantums-meruit) | Team lead; application shell and shared interface components, including the header, footer, sidebar, user profile/card, reusable UI components, and Week 9 Create Post/About pages, navigation, and persistence integration. |
 | [WairimuEvans](https://github.com/WairimuEvans) | Post feed feature, including post creation, post cards and lists, likes, author deletion, post utility logic and tests; individual Week 8 React daily challenges. |
 
 Contributions are tracked through feature branches and pull requests in this repository.
+
+## Week 9 Contribution Log
+
+### @Quantums-meruit
+
+- **Work completed:** Implemented the Create Post and About pages; connected the Create Post route to the shared posts context; added browser persistence for created posts and likes; added active navigation states, responsive navigation refinements, and page-specific CSS Modules; separated the posts context and hook into focused modules.
+- **PR:** [#14 Week 9 create/about pages and local persistence](https://github.com/Quantums-meruit/iyf-s12-communityhub-team-Quantums-meruit/pull/14).
+- **Validation:** Local production build and automated tests passed (14 tests); lint cleanup and final browser/Lighthouse verification are being completed.
 
 ## Week 8 Contribution Log
 
