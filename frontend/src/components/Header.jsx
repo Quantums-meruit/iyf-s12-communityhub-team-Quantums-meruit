@@ -9,10 +9,18 @@ function Header() {
       </Link>
 
       <nav className="header-nav" aria-label="Main navigation">
-        <NavLink to="/" end>Home</NavLink>
-        <NavLink to="/posts">Posts</NavLink>
-        <NavLink to="/create">Create post</NavLink>
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/" end className={({ isActive }) => isActive ? 'is-active' : undefined}>
+          Home
+        </NavLink>
+        <NavLink to="/posts" className={({ isActive }) => isActive ? 'is-active' : undefined}>
+          Posts
+        </NavLink>
+        <NavLink to="/create" className={({ isActive }) => isActive ? 'is-active' : undefined}>
+          Create post
+        </NavLink>
+        <NavLink to="/about" className={({ isActive }) => isActive ? 'is-active' : undefined}>
+          About
+        </NavLink>
       </nav>
     </header>
   )

@@ -604,3 +604,47 @@
     max-width: 100%;
   }
 }
+
+/* Make the current route clear in the shared header navigation. */
+.header-nav a {
+  padding: 0.45rem 0.6rem;
+  border-radius: 0.45rem;
+}
+
+.header-nav a.is-active {
+  color: #4843b4;
+  background: #eeedff;
+}
+
+.header-nav a:focus-visible,
+.sidebar-link:focus-visible {
+  outline: 3px solid #aaa7f0;
+  outline-offset: 2px;
+}
+
+/* Let shared navigation and footer wrap instead of overflowing small screens. */
+@media (max-width: 700px) {
+  .site-header {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding-block: 0.75rem;
+  }
+
+  .header-nav {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 0.35rem;
+  }
+
+  .site-footer {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 380px) {
+  .header-nav a {
+    padding-inline: 0.4rem;
+    font-size: 0.76rem;
+  }
+}

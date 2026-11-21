@@ -1,0 +1,89 @@
+.page {
+  display: grid;
+  align-content: start;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  min-width: 0;
+}
+
+.hero {
+  display: grid;
+  justify-items: start;
+  gap: 1rem;
+  padding: clamp(1.4rem, 4vw, 2.6rem);
+  border: 1px solid #e2e7f0;
+  border-radius: 1rem;
+  background: linear-gradient(120deg, #f1efff, #f8f8ff 60%, #eef6ff);
+}
+
+.hero h1 {
+  max-width: 42rem;
+  margin: 0;
+  color: #172033;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+}
+
+.hero > p:not(.eyebrow) {
+  max-width: 42rem;
+  margin: 0;
+  color: #647087;
+  line-height: 1.7;
+}
+
+.section {
+  display: grid;
+  gap: 1rem;
+}
+
+.sectionHeading h2,
+.technology h2 {
+  margin: 0;
+  color: #172033;
+  font-size: clamp(1.25rem, 3vw, 1.6rem);
+}
+
+.sectionHeading .eyebrow {
+  margin-bottom: 0.4rem;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.featureCard {
+  min-width: 0;
+  padding: 1.2rem;
+  border: 1px solid #e2e7f0;
+  border-radius: 0.85rem;
+  background: #fff;
+}
+
+.featureCard h3 {
+  margin: 0 0 0.55rem;
+  color: #354158;
+  font-size: 1rem;
+}
+
+.featureCard p,
+.technology p {
+  margin: 0;
+  color: #647087;
+  line-height: 1.65;
+}
+
+.technology {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1.25rem;
+  border-radius: 0.85rem;
+  background: #edf2fb;
+}
+
+@media (max-width: 760px) {
+  .featureGrid {
+    grid-template-columns: 1fr;
+  }
+}

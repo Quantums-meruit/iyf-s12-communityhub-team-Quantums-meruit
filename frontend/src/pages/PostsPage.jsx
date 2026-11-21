@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import PostList from '../components/PostList.jsx'
-import { usePosts } from '../context/PostsContext.jsx'
+import { usePosts } from '../context/usePosts.js'
 
 function PostsPage() {
   const {

@@ -38,6 +38,16 @@ function Sidebar({ user }) {
             <span aria-hidden="true">✎</span>
             <span>Create post</span>
           </NavLink>
+
+          <NavLink
+            className={({ isActive }) =>
+              `sidebar-link${isActive ? ' is-active' : ''}`
+            }
+            to="/about"
+          >
+            <span aria-hidden="true">i</span>
+            <span>About</span>
+          </NavLink>
         </nav>
       </section>
 
