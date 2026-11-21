@@ -5,6 +5,7 @@ import {
   useState,
 } from 'react'
 import useFetch from '../hooks/useFetch.js'
+import useLocalStorage from '../hooks/useLocalStorage.js'
 import {
   createPost,
   deletePost,
@@ -27,8 +28,15 @@ function PostsProvider({ children }) {
     refetch,
   } = useFetch('https://jsonplaceholder.typicode.com/posts')
 
-  const [localPosts, setLocalPosts] = useState([])
-  const [apiLikes, setApiLikes] = useState({})
+  // Keep user-created content and API likes when the browser is refreshed.
+  const [localPosts, setLocalPosts] = useLocalStorage(
+    'communityhub:local-posts',
+    [],
+  )
+  const [apiLikes, setApiLikes] = useLocalStorage(
+    'communityhub:api-likes',
+    {},
+  )
   const [searchQuery, setSearchQuery] = useState('')
 
   const apiPosts = useMemo(() => {
