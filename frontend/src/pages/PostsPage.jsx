@@ -23,7 +23,7 @@ function PostsPage() {
           <p>Explore conversations from the community.</p>
         </section>
 
-        <Link to="/create" className="button button-primary">
+        <Link to="/create" className="ui-button ui-button--primary">
           Create Post
         </Link>
       </header>
@@ -50,7 +50,11 @@ function PostsPage() {
         <section className="error-message" role="alert">
           <p>We couldn't load the community posts.</p>
           <p>{error}</p>
-          <button type="button" onClick={refetch}>
+          <button
+            className="ui-button ui-button--primary"
+            type="button"
+            onClick={refetch}
+          >
             Try again
           </button>
         </section>
@@ -67,8 +71,8 @@ function PostsPage() {
           ) : (
             <PostList
               posts={filteredPosts}
-              onLike={likePost}
-              onDelete={removePost}
+              onToggleLike={likePost}
+              onDeletePost={removePost}
               currentUserId={currentUser.id}
             />
           )}
