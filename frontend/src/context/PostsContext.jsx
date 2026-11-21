@@ -1,11 +1,10 @@
 import {
-  createContext,
-  useContext,
   useMemo,
   useState,
 } from 'react'
 import useFetch from '../hooks/useFetch.js'
 import useLocalStorage from '../hooks/useLocalStorage.js'
+import { PostsContext } from './PostsContextValue.js'
 import {
   createPost,
   deletePost,
@@ -13,11 +12,9 @@ import {
 } from '../utils/posts.js'
 import { filterPosts } from '../utils/postSearch.js'
 
-const PostsContext = createContext(null)
-
 const currentUser = {
-  id: 'WairimuEvans',
-  name: 'Evans Wairimu',
+  id: 'Quantums-meruit',
+  name: 'Joseph Kinyanjui',
 }
 
 function PostsProvider({ children }) {
@@ -139,14 +136,4 @@ function PostsProvider({ children }) {
   )
 }
 
-function usePosts() {
-  const context = useContext(PostsContext)
-
-  if (!context) {
-    throw new Error('usePosts must be used inside PostsProvider')
-  }
-
-  return context
-}
-
-export { PostsProvider, usePosts }
+export { PostsProvider }
