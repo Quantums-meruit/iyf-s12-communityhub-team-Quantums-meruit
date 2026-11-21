@@ -1,7 +1,7 @@
 import UserProfile from '../components/UserProfile.jsx'
 import CreatePost from '../components/CreatePost.jsx'
 import PostList from '../components/PostList.jsx'
-import { usePosts } from '../context/PostsContext.jsx'
+import { usePosts } from '../context/usePosts.js'
 
 function HomePage() {
   const {
