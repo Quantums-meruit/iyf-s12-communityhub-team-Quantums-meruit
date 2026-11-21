@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
 import CreatePost from '../components/CreatePost.jsx'
-import { usePosts } from '../context/PostsContext.jsx'
+import { usePosts } from '../context/usePosts.js'
 import styles from './CreatePostPage.module.css'
 
 function CreatePostPage() {
