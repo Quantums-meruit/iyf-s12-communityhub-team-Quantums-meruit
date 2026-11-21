@@ -15,7 +15,7 @@ Contributions are tracked through feature branches and pull requests in this rep
 
 - **Work completed:** Implemented the Create Post and About pages; connected the Create Post route to the shared posts context; added browser persistence for created posts and likes; added active navigation states, responsive navigation refinements, and page-specific CSS Modules; separated the posts context and hook into focused modules.
 - **PR:** [#14 Week 9 create/about pages and local persistence](https://github.com/Quantums-meruit/iyf-s12-communityhub-team-Quantums-meruit/pull/14).
-- **Validation:** Local production build and automated tests passed (14 tests); lint cleanup and final browser/Lighthouse verification are being completed.
+- **Validation:** The previous local checkout passed a production build and 14 automated tests. The final GitHub branch refactor still requires a fresh local build, lint, test, and browser verification.
 
 ## Week 8 Contribution Log
 
