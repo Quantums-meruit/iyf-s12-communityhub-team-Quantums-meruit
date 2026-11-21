@@ -5,11 +5,14 @@ function PostDetailPage() {
   const { postId } = useParams()
   const { posts, loading, error, refetch } = usePosts()
 
-  if (loading) {
+  // Local posts must remain accessible even if the remote API is unavailable.
+  const post = posts.find((item) => String(item.id) === postId)
+
+  if (loading && !post) {
     return <main className="main-content"><p role="status">Loading post...</p></main>
   }
 
-  if (error) {
+  if (error && !post) {
     return (
       <main className="main-content">
         <p role="alert">Could not load this post: {error}</p>
@@ -17,8 +20,6 @@ function PostDetailPage() {
       </main>
     )
   }
-
-  const post = posts.find((item) => String(item.id) === postId)
 
   if (!post) {
     return (
